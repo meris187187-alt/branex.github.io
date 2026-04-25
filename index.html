@@ -3,40 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branex Busovača | Premium Transport & Logistika</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>BRANEX BUSOVAČA</title>
+    <link rel="manifest" href="manifest.json">
     <style>
-        :root { --main-color: #FFD700; --dark-color: #0f0f0f; }
-        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; margin: 0; }
-        .navbar { background: var(--dark-color); padding: 25px 0; border-bottom: 5px solid var(--main-color); }
-        .framed-box { border: 4px solid var(--main-color); padding: 10px 25px; display: inline-block; text-transform: uppercase; font-weight: 900; color: white; text-decoration: none; letter-spacing: 2px; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000'); height: 75vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-        .hero h1 { font-size: 4.5rem; font-weight: 900; text-transform: uppercase; border: 10px solid var(--main-color); padding: 20px 50px; }
-        .service-card { border: 5px solid var(--dark-color); padding: 50px; transition: 0.4s; height: 100%; background: #fff; }
-        .service-card:hover { background: var(--dark-color); color: white; transform: translateY(-10px); }
-        .btn-send { background: var(--main-color); color: #000; font-weight: 900; border: none; padding: 20px; width: 100%; text-transform: uppercase; font-size: 1.2rem; }
-        .contact-box { border: 6px solid var(--dark-color); padding: 40px; background: #f9f9f9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #000; color: #e2ef11; padding: 30px 20px; text-align: center; border-bottom: 8px solid #e2ef11; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('kamion.jpg'); background-size: cover; height: 300px; display: flex; align-items: center; justify-content: center; color: #fff; }
+        .hero-content { border: 5px solid #e2ef11; padding: 20px; background: rgba(0,0,0,0.5); text-align: center; }
+        .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: #fff; padding: 20px; border-top: 5px solid #000; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .card h3 { color: #000; border-bottom: 2px solid #e2ef11; padding-bottom: 10px; }
+        .contact-section { background: #e2ef11; color: #000; padding: 30px; margin-top: 40px; font-weight: bold; border-radius: 8px; }
+        footer { background: #000; color: #fff; text-align: center; padding: 20px; margin-top: 50px; }
+        .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
-    <nav class="navbar"><div class="container text-center"><a href="#" class="framed-box">Branex Busovača</a></div></nav>
-    <header class="hero"><div class="container"><h1>BRANEX <span style="color:var(--main-color)">BUSOVAČA</span></h1><p class="lead fw-bold mt-3">PREMIUM TRANSPORT & LOGISTIKA</p></div></header>
-    <section class="container my-5 py-5">
-        <div class="row g-4 text-center">
-            <div class="col-md-4"><div class="service-card"><i class="fas fa-globe fa-3x mb-3"></i><h3>EUROPA</h3><p>Pokrivamo cijelu Europu sa naglaskom na Njemačku i Austriju.</p></div></div>
-            <div class="col-md-4"><div class="service-card"><i class="fas fa-clock fa-3x mb-3"></i><h3>TAČNOST</h3><p>Vaša roba stiže na dogovoreno mjesto u dogovoreno vrijeme.</p></div></div>
-            <div class="col-md-4"><div class="service-card"><i class="fas fa-check-double fa-3x mb-3"></i><h3>SIGURNOST</h3><p>Sav teret je pod punim osiguranjem i GPS praćenjem.</p></div></div>
+
+<header>
+    <h1>BRANEX BUSOVAČA</h1>
+    <p>VAŠ POUZDAN PARTNER U TRANSPORTU</p>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>PREMIUM LOGISTIKA</h1>
+        <p>Prevoz robe širom Evrope sigurnim i brzim rutama.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div id="o-nama" class="card">
+        <h3>O NAMA</h3>
+        <p>Sa sjedištem u Busovači, Branex nudi vrhunske usluge transporta. Specijalizovani smo za međunarodni transport sa fokusom na tržišta Njemačke i Austrije. Naš cilj je zadovoljan klijent i sigurna roba.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <span class="icon">🌍</span>
+            <h3>EVROPA</h3>
+            <p>Redovne linije i brzi transport na relacijama širom EU.</p>
         </div>
-    </section>
-    <section class="container mb-5 pb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 contact-box">
-                <h2 class="text-center fw-bold mb-4">KONTAKTIRAJTE NAS</h2>
-                <form><input type="text" class="form-control mb-3 p-3" placeholder="Ime i prezime"><textarea class="form-control mb-3 p-3" rows="4" placeholder="Opis robe i relacija"></textarea><button type="button" class="btn-send">POŠALJI UPIT</button></form>
-            </div>
+        <div class="card">
+            <span class="icon">⏱️</span>
+            <h3>TAČNOST</h3>
+            <p>Poštujemo vaše vrijeme. Roba stiže tačno u dogovoreni termin.</p>
         </div>
-    </section>
-    <footer class="bg-black text-white text-center py-4"><p class="mb-0">© 2026 BRANEX BUSOVAČA. SVA PRAVA PRIDRŽANA.</p></footer>
+        <div class="card">
+            <span class="icon">🛡️</span>
+            <h3>SIGURNOST</h3>
+            <p>Najmoderniji GPS sistemi praćenja i puno osiguranje tereta.</p>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h3>KONTAKTIRAJTE NAS</h3>
+        <p>📍 Adresa: Busovača, Bosna i Hercegovina</p>
+        <p>📞 Telefon: +387 61 712 187</p>
+        <p>📧 Email: info@branex-busovaca.com</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 BRANEX BUSOVAČA. SVA PRAVA PRIDRŽANA.
+</footer>
+
 </body>
 </html>
