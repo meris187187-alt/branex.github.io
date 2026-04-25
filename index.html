@@ -9,20 +9,39 @@
         :root {
             --zuta: #e2ef11;
             --crna: #000000;
-            --siva: #1a1a1a;
+            --siva: #121212;
             --bijela: #ffffff;
+            --akcent: #ffffff;
         }
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
+        * { box-sizing: border-box; transition: all 0.2s ease-in-out; }
         
         body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
             margin: 0; 
             padding: 0; 
             background-color: var(--crna); 
             color: var(--bijela);
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
+
+        /* Navigacija */
+        nav {
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--zuta);
+        }
+
+        nav a { color: var(--bijela); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--zuta); }
 
         /* Sekcije kao slajdovi */
         section {
@@ -31,199 +50,164 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px;
-            border-bottom: 2px solid var(--siva);
-        }
-
-        /* Header animacija */
-        header {
-            background-color: var(--crna);
-            color: var(--zuta);
-            padding: 20px;
+            padding: 100px 20px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--zuta);
         }
 
-        /* Hero Sekcija sa slikom */
+        /* Hero sa animacijom */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1200');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1501700493784-fe16f39d433f?q=80&w=1200');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
         .hero-box {
-            border: 8px solid var(--zuta);
-            padding: 40px;
-            background: rgba(0,0,0,0.8);
-            text-align: center;
-            transform: skew(-5deg);
+            border: 10px solid var(--zuta);
+            padding: 50px;
+            background: rgba(0,0,0,0.85);
+            max-width: 800px;
         }
 
         .hero-box:hover {
-            background: var(--zuta);
-            color: var(--crna);
-            transform: skew(0deg) scale(1.05);
+            box-shadow: 0 0 50px rgba(226, 239, 17, 0.4);
+            transform: scale(1.02);
         }
 
-        /* O Nama - Dugi tekst */
+        /* O Nama - Čistije i brže */
         .o-nama-card {
             max-width: 800px;
             padding: 40px;
-            border: 3px solid var(--zuta);
             background: var(--siva);
-            border-radius: 15px;
-            line-height: 1.8;
-            text-align: justify;
+            border-radius: 2px;
+            border-left: 10px solid var(--zuta);
+            text-align: left;
+            line-height: 1.6;
         }
 
-        .o-nama-card:hover {
-            border-color: var(--bijela);
-            box-shadow: 0 0 30px var(--zuta);
-        }
-
-        /* Usluge Grid */
-        .grid {
+        /* Kontakt Kartice */
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
+            margin-top: 40px;
         }
 
-        .card {
+        .contact-card {
             background: var(--siva);
             padding: 30px;
-            border: 2px solid var(--zuta);
-            text-align: center;
-            border-radius: 10px;
+            border: 2px solid #333;
+            text-decoration: none;
+            color: var(--bijela);
         }
 
-        .card:hover {
+        .contact-card:hover {
+            border-color: var(--zuta);
             background: var(--zuta);
             color: var(--crna);
-            cursor: pointer;
+            transform: translateY(-10px);
         }
 
-        .card:hover h3 { color: var(--crna); }
+        .contact-card i { font-size: 2rem; display: block; margin-bottom: 15px; }
 
-        /* Kontakt Forma */
-        .contact-form {
-            background: var(--bijela);
+        /* Brza Forma */
+        .fast-form {
+            background: var(--zuta);
             color: var(--crna);
             padding: 40px;
-            border-radius: 20px;
             width: 100%;
-            max-width: 600px;
-            border: 5px solid var(--zuta);
+            max-width: 700px;
+            margin-top: 20px;
         }
 
         input, textarea {
             width: 100%;
-            padding: 15px;
-            margin: 10px 0;
+            padding: 12px;
+            margin: 8px 0;
             border: 2px solid var(--crna);
-            border-radius: 5px;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--zuta);
-            background: #fdffdb;
+            background: rgba(255,255,255,0.9);
         }
 
         button {
             background: var(--crna);
             color: var(--zuta);
-            padding: 15px 30px;
+            padding: 15px;
             border: none;
-            font-weight: bold;
             width: 100%;
+            font-weight: bold;
             cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        button:hover {
-            background: var(--zuta);
-            color: var(--crna);
             font-size: 1.1rem;
         }
 
-        h2 { color: var(--zuta); font-size: 2.5rem; text-transform: uppercase; }
+        button:hover { opacity: 0.9; }
+
+        h2 { font-size: 3rem; margin-bottom: 30px; text-transform: uppercase; }
         
-        .footer {
-            background: var(--crna);
-            padding: 20px;
-            text-align: center;
-            border-top: 2px solid var(--zuta);
-        }
+        footer { padding: 40px; background: #050505; text-align: center; border-top: 1px solid #333; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <h2>BRANEX BUSOVAČA</h2>
-</header>
+<nav>
+    <a href="#pocetna">Početna</a>
+    <a href="#o-nama">O Nama</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
 
-<section class="hero">
+<section id="pocetna" class="hero">
     <div class="hero-box">
-        <h1>BRANEX LOGISTIKA</h1>
-        <p>MOĆ TRANSPORTA U VAŠIM RUKAMA</p>
+        <h1 style="font-size: 4rem; margin: 0; color: var(--zuta);">BRANEX</h1>
+        <p style="font-size: 1.5rem; letter-spacing: 5px;">BUSOVAČA LOGISTIKA</p>
     </div>
 </section>
 
-<section id="o-nama">
+<section id="o-nama" style="background: #0a0a0a;">
     <h2>O NAMA</h2>
     <div class="o-nama-card">
-        <p>Branex Busovača nije samo transportna firma, mi smo vaš strateški partner u poslovanju. Osnovani sa vizijom da povežemo Bosnu i Hercegovinu sa srcem Evrope, godinama gradimo povjerenje kroz hiljade uspješno prevezenih tura. Naša specijalnost je transport na relacijama za Njemačku, Austriju i Švicarsku. Posjedujemo modernu flotu kamiona koja zadovoljava najstrožije ekološke i sigurnosne standarde. Naš tim čine iskusni profesionalci koji razumiju da je svaki teret dragocjen. Bilo da se radi o paletnoj robi ili specijalnim teretima, mi garantujemo maksimalnu posvećenost od utovara do krajnje destinacije.</p>
-    </div>
-</section>
-
-<section id="usluge">
-    <h2>NAŠE USLUGE</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>MEĐUNARODNI TRANSPORT</h3>
-            <p>Direktne linije prema svim većim centrima u EU uz CMR osiguranje.</p>
-        </div>
-        <div class="card">
-            <h3>LOGISTIČKA PODRŠKA</h3>
-            <p>Skladištenje i organizacija transporta po sistemu "ključ u ruke".</p>
-        </div>
-        <div class="card">
-            <h3>GPS PRAĆENJE</h3>
-            <p>U svakom trenutku znajte gdje se nalazi vaša roba putem našeg portala.</p>
-        </div>
+        <p style="font-size: 1.2rem;">
+            <strong>Branex Busovača</strong> postavlja standarde u transportu robe između Balkana i Evropske Unije. 
+            Naša flota opremljena je najmodernijom tehnologijom, a naši vozači su ambasadori tačnosti i sigurnosti. 
+            Specijalizovani smo za brze transporte na relacijama <strong>Njemačka, Austrija i Slovenija</strong>.
+            <br><br>
+            Vaše povjerenje je naš pogon. Svaka tura je isplanirana do najsitnijih detalja kako bi vaša roba stigla sigurno i na vrijeme.
+        </p>
     </div>
 </section>
 
 <section id="kontakt">
-    <h2>POŠALJITE UPIT</h2>
-    <form class="contact-form" action="mailto:info@branex-busovaca.com" method="post" enctype="text/plain">
-        <label>Vaše Ime i Prezime:</label>
-        <input type="text" name="ime" placeholder="Unesite ime..." required>
-        
-        <label>Vaš Email:</label>
-        <input type="email" name="email" placeholder="Unesite email..." required>
-        
-        <label>Broj Telefona:</label>
-        <input type="tel" name="tel" placeholder="+387..." required>
-        
-        <label>Vaša Poruka:</label>
-        <textarea name="poruka" rows="5" placeholder="Opis robe, relacija, datum..."></textarea>
-        
-        <button type="submit">POŠALJI PORUKU</button>
-    </form>
+    <h2>KONTAKTIRAJTE NAS</h2>
+    <div class="contact-grid">
+        <a href="tel:+38761712187" class="contact-card">
+            <h3>NAZOVI ODMAH</h3>
+            <p>+387 61 712 187</p>
+        </a>
+        <a href="https://wa.me/38761712187" class="contact-card">
+            <h3>WHATSAPP</h3>
+            <p>Pošalji poruku</p>
+        </a>
+        <a href="mailto:info@branex.ba" class="contact-card">
+            <h3>EMAIL ADRESA</h3>
+            <p>info@branex.ba</p>
+        </a>
+    </div>
+
+    <div class="fast-form">
+        <h3 style="margin-top: 0;">BRZI UPIT</h3>
+        <form action="mailto:info@branex.ba" method="post" enctype="text/plain">
+            <input type="text" name="ime" placeholder="Vaše Ime" required>
+            <input type="text" name="tel" placeholder="Vaš Telefon" required>
+            <textarea name="poruka" rows="3" placeholder="Šta prevozimo?" required></textarea>
+            <button type="submit">POŠALJI</button>
+        </form>
+    </div>
 </section>
 
-<div class="footer">
-    <p>&copy; 2026 BRANEX BUSOVAČA. SVA PRAVA PRIDRŽANA. | Powered by Branex Tech</p>
-</div>
+<footer>
+    <p>&copy; 2026 BRANEX BUSOVAČA. SVA PRAVA PRIDRŽANA.</p>
+</footer>
 
 </body>
 </html>
