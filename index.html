@@ -10,7 +10,7 @@
         :root { --main-color: #FFD700; --dark-color: #0f0f0f; }
         body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; overflow-x: hidden; }
 
-        /* Navigacija */
+        /* Navigacija - JEDINI GLAVNI OKVIR */
         .navbar { background: var(--dark-color); padding: 20px 0; border-bottom: 5px solid var(--main-color); }
         .framed-box {
             border: 3px solid var(--main-color);
@@ -29,15 +29,16 @@
         }
         .nav-link-custom:hover { color: var(--main-color) !important; }
 
-        /* Hero */
+        /* Hero - SADA ČIST I MASIVAN */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000'); 
-            height: 90vh; background-size: cover; background-position: center; 
+            height: 80vh; background-size: cover; background-position: center; 
             display: flex; align-items: center; color: white;
         }
+        .hero h1 { font-size: 4.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
 
-        /* Sekcije s masivnim okvirom */
-        section { padding: 100px 0; border: 15px solid #2a2a2a; border-radius: 0; }
+        /* Sekcije */
+        section { padding: 100px 0; }
         .section-animate {
             opacity: 0;
             transform: translateY(30px);
@@ -48,7 +49,7 @@
             transform: translateY(0);
         }
 
-        /* UPEČATLJIVE KONTAKT KARTICE S OKVIROM */
+        /* Kontakt Kartice */
         .premium-contact-card {
             border: 2px solid #ddd;
             padding: 30px;
@@ -56,21 +57,14 @@
             transition: 0.4s;
             background: #fff;
             border-left: 5px solid var(--dark-color);
-            position: relative;
         }
         .premium-contact-card:hover {
             border-color: var(--main-color);
             transform: translateX(10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
-        .premium-contact-card i {
-            font-size: 2rem;
-            color: var(--main-color);
-            margin-bottom: 15px;
-            display: block;
-        }
+        .premium-contact-card i { font-size: 2rem; color: var(--main-color); margin-bottom: 15px; display: block; }
 
-        /* UOKVIRENI FORMULAR SA ZASTAVICOM */
+        /* Formular s okvirom */
         .framed-form-container {
             border: 4px solid var(--dark-color);
             padding: 40px;
@@ -78,7 +72,7 @@
             position: relative;
         }
         .framed-form-container::after {
-            content: "ZATRAŽITE PONUDU";
+            content: "UPIT ZA PONUDU";
             position: absolute;
             top: -15px;
             left: 20px;
@@ -96,7 +90,7 @@
         }
         .btn-main:hover { background: var(--main-color); color: black; }
 
-        .footer { background: #000; color: #555; padding: 30px 0; font-size: 0.8rem; border-top: 5px solid var(--main-color); }
+        .footer { background: #000; color: #555; padding: 30px 0; border-top: 5px solid var(--main-color); }
     </style>
 </head>
 <body>
@@ -116,12 +110,10 @@
     </div>
 </nav>
 
-<section class="hero text-center section-animate">
+<section class="hero text-center">
     <div class="container">
-        <div class="framed-box mb-5" style="border-width: 6px; padding: 25px 45px; font-size: 2.5rem;">
-            <span style="color:white">PROFESIONALNA</span> <br> <span style="color:var(--main-color)">LOGISTIKA</span>
-        </div>
-        <p class="lead mb-0 fs-4 fw-light">Povezujemo Bosnu i Hercegovinu sa ostatkom svijeta.</p>
+        <h1 class="mb-4">PROFESIONALNA <br><span style="color:var(--main-color)">LOGISTIKA</span></h1>
+        <p class="lead mb-0 fs-4 fw-light">Vaš siguran partner u međunarodnom transportu.</p>
     </div>
 </section>
 
@@ -130,12 +122,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h2 class="display-4 fw-bold mb-4">MI SMO <span style="color:var(--main-color)">BRANEX</span></h2>
-                <p class="fs-5 text-muted">Sa bazom u Busovači, naša firma stoji kao lider u transportu roba na relaciji BiH – Evropska Unija. Naš fokus je jednostavan: pružiti klijentu sigurnost, brzinu i transparentnost u svakom pređenom kilometru.</p>
+                <p class="fs-5 text-muted">Lideri u transportu roba na relaciji BiH – Evropska Unija. Naš fokus je na sigurnosti i brzini u svakom pređenom kilometru.</p>
             </div>
             <div class="col-lg-6">
-                <div style="border: 10px solid #2a2a2a; padding: 10px;">
-                    <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1000" class="img-fluid border shadow-sm">
-                </div>
+                <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1000" class="img-fluid border shadow-sm">
             </div>
         </div>
     </div>
@@ -149,38 +139,28 @@
                 <div class="premium-contact-card shadow-sm">
                     <i class="fas fa-map-marked-alt"></i>
                     <h5 class="fw-bold">LOKACIJA</h5>
-                    <p class="mb-0 text-muted">Ul. 1. mart bb,<br>72260 Busovača, BiH</p>
+                    <p class="mb-0 text-muted">Ul. 1. mart bb, Busovača, BiH</p>
                 </div>
                 <div class="premium-contact-card shadow-sm">
                     <i class="fas fa-phone-square"></i>
-                    <h5 class="fw-bold">TELEFONI</h5>
-                    <p class="mb-0 text-muted">+387 30 732 937<br>+387 63 333 505</p>
+                    <h5 class="fw-bold">TELEFON</h5>
+                    <p class="mb-0 text-muted">+387 30 732 937</p>
                 </div>
                 <div class="premium-contact-card shadow-sm">
                     <i class="fas fa-envelope-open"></i>
-                    <h5 class="fw-bold">EMAIL ADRESA</h5>
+                    <h5 class="fw-bold">EMAIL</h5>
                     <p class="mb-0 text-muted">branex_doo@hotmail.com</p>
                 </div>
             </div>
-
             <div class="col-lg-8">
                 <div class="framed-form-container shadow-lg">
                     <form>
                         <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <label class="small fw-bold mb-2">VAŠE IME I PREZIME</label>
-                                <input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Unesite ime...">
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <label class="small fw-bold mb-2">EMAIL ADRESA</label>
-                                <input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Unesite email...">
-                            </div>
+                            <div class="col-md-6 mb-4"><input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Ime"></div>
+                            <div class="col-md-6 mb-4"><input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Email"></div>
                         </div>
-                        <div class="mb-4">
-                            <label class="small fw-bold mb-2">VRSTA ROBE I DESTINACIJA</label>
-                            <textarea class="form-control border-dark rounded-0 p-3" rows="5" placeholder="Npr: Paletna roba, Busovača - Minhen, 5 tona..."></textarea>
-                        </div>
-                        <button type="button" class="btn-main">POŠALJI ZAHTJEV ZA PONUDU</button>
+                        <textarea class="form-control border-dark rounded-0 p-3 mb-4" rows="5" placeholder="Detalji transporta..."></textarea>
+                        <button type="button" class="btn-main">POŠALJI ZAHTJEV</button>
                     </form>
                 </div>
             </div>
@@ -189,9 +169,7 @@
 </section>
 
 <footer class="footer text-center">
-    <div class="container">
-        <p class="mb-0">&copy; 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS. SVA PRAVA ZADRŽANA.</p>
-    </div>
+    <p class="mb-0">&copy; 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS</p>
 </footer>
 
 <script>
