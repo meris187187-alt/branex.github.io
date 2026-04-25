@@ -10,7 +10,7 @@
         :root { --main-color: #FFD700; --dark-color: #0f0f0f; }
         body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; overflow-x: hidden; }
 
-        /* Navigacija - JEDINI GLAVNI OKVIR */
+        /* Navigacija */
         .navbar { background: var(--dark-color); padding: 20px 0; border-bottom: 5px solid var(--main-color); }
         .framed-box {
             border: 3px solid var(--main-color);
@@ -29,7 +29,7 @@
         }
         .nav-link-custom:hover { color: var(--main-color) !important; }
 
-        /* Hero - Čist i upečatljiv */
+        /* Hero */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000'); 
             height: 70vh; background-size: cover; background-position: center; 
@@ -37,22 +37,46 @@
         }
         .hero h1 { font-size: 4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* Sekcije i animacije (Folder prelaz) */
+        /* Sekcije i animacije */
         section { padding: 100px 0; }
         .section-animate {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+            transition: all 0.9s ease-out;
         }
         .section-animate.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* O NAMA - Profesionalni stil */
-        .img-frame { border: 15px solid var(--dark-color); padding: 0; line-height: 0; }
+        /* USLUGE - IDENTIČNI OKVIRI KAO KLIJENT CENTAR */
+        .service-card-premium {
+            border: 4px solid var(--dark-color); /* Debeli okvir kao na klijent centru */
+            padding: 45px;
+            transition: all 0.4s ease;
+            background: #fff;
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+        }
 
-        /* KONTAKT KARTICE I FORMULAR */
+        /* Hover efekat: Popunjavanje bojom i promjena teksta */
+        .service-card-premium:hover {
+            background: var(--dark-color); /* Puni se crnom */
+            transform: translateY(-10px);
+        }
+
+        .service-card-premium h4, .service-card-premium p, .service-card-premium i {
+            transition: 0.4s;
+        }
+
+        .service-card-premium i { font-size: 2.5rem; color: var(--dark-color); margin-bottom: 20px; display: block; }
+
+        .service-card-premium:hover h4 { color: var(--main-color); } /* Naslov u zlatnu */
+        .service-card-premium:hover p { color: #ffffff; } /* Text u bijelu */
+        .service-card-premium:hover i { color: var(--main-color); } /* Ikona u zlatnu */
+
+        /* KLIJENT CENTAR STIL */
         .premium-contact-card {
             border: 2px solid #ddd;
             padding: 30px;
@@ -85,7 +109,7 @@
         .btn-main {
             background: var(--dark-color); color: white; border: none;
             padding: 18px 40px; font-weight: bold; text-transform: uppercase;
-            transition: 0.3s; width: 100%; letter-spacing: 1px;
+            transition: 0.3s; width: 100%;
         }
         .btn-main:hover { background: var(--main-color); color: black; }
 
@@ -121,15 +145,11 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h2 class="display-4 fw-bold mb-4">MI SMO <span style="color:var(--main-color)">BRANEX</span></h2>
-                <p class="fs-5 text-muted">
-                    Branex d.o.o. Busovača nije samo transportna firma; mi smo arhitekti vaše logistike. Sa decenijskim iskustvom u povezivanju domaćeg tržišta sa ključnim centrima Evropske unije, izgradili smo reputaciju zasnovanu na besprijekornoj tačnosti i povjerenju.
-                </p>
-                <p class="fs-5 text-muted">
-                    Naša flota, opremljena najmodernijim vozilima Euro 6 standarda, svakodnevno savladava kilometre širom Njemačke, Austrije, Slovenije i Italije, noseći vaše povjerenje kao najvrijedniji teret. Za nas, svaki klijent je prioritet, a svaki transport misija koju obavljamo uz maksimalnu profesionalnost.
-                </p>
+                <p class="fs-5 text-muted">Sa bazom u Busovači, Branex d.o.o. postavlja standarde u transportu roba na relaciji BiH – Evropska Unija. Naša reputacija je zasnovana na besprijekornoj tačnosti i povjerenju.</p>
+                <p class="fs-5 text-muted">Naša flota vozila Euro 6 standarda svakodnevno povezuje klijente sa ključnim tržištima Njemačke, Austrije i Slovenije.</p>
             </div>
             <div class="col-lg-6">
-                <div class="img-frame shadow-lg">
+                <div style="border: 15px solid var(--dark-color); line-height: 0;">
                     <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1000" class="img-fluid" alt="Branex Transport">
                 </div>
             </div>
@@ -138,25 +158,28 @@
 </section>
 
 <section id="usluge" class="bg-light section-animate">
-    <div class="container text-center">
-        <h2 class="display-5 fw-bold mb-5">NAŠE USLUGE</h2>
-        <div class="row g-4 text-start">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold display-5">NAŠE USLUGE</h2>
+        <div class="row g-4">
             <div class="col-md-4">
-                <div class="p-5 bg-white border-bottom border-4 border-warning shadow-sm">
+                <div class="service-card-premium shadow-sm">
+                    <i class="fas fa-truck"></i>
                     <h4 class="fw-bold">TRANSPORT</h4>
-                    <p class="text-muted mb-0">Kompletni i zbirni utovari za sve zemlje EU uz maksimalnu sigurnost.</p>
+                    <p class="text-muted mb-0">Kompletni i zbirni utovari širom Evrope uz maksimalnu sigurnost pošiljke.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-5 bg-white border-bottom border-4 border-dark shadow-sm">
-                    <h4 class="fw-bold">CARINJENJE</h4>
-                    <p class="text-muted mb-0">Posredovanje i špedicija. Brzo rješavanje svih carinskih procedura.</p>
+                <div class="service-card-premium shadow-sm">
+                    <i class="fas fa-box-open"></i>
+                    <h4 class="fw-bold">ŠPEDICIJA</h4>
+                    <p class="text-muted mb-0">Brzo i efikasno posredovanje pri carinjenju robe uz stručan tim špeditera.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-5 bg-white border-bottom border-4 border-warning shadow-sm">
-                    <h4 class="fw-bold">LOGISTIKA</h4>
-                    <p class="text-muted mb-0">Pametna rješenja za skladištenje i distribuciju vaše robe do krajnjih vrata.</p>
+                <div class="service-card-premium shadow-sm">
+                    <i class="fas fa-warehouse"></i>
+                    <h4 class="fw-bold">SKLADIŠTENJE</h4>
+                    <p class="text-muted mb-0">Siguran prostor za vašu robu uz modernu logističku podršku i distribuciju.</p>
                 </div>
             </div>
         </div>
@@ -168,18 +191,18 @@
         <h2 class="text-center mb-5 fw-bold display-5">KLIJENT CENTAR</h2>
         <div class="row g-4">
             <div class="col-lg-4">
-                <div class="premium-contact-card">
-                    <i class="fas fa-map-marked-alt"></i>
+                <div class="premium-contact-card shadow-sm">
+                    <i class="fas fa-map-marker-alt"></i>
                     <h5 class="fw-bold">ADRESA</h5>
                     <p class="mb-0 text-muted">Ul. 1. mart bb, Busovača, BiH</p>
                 </div>
-                <div class="premium-contact-card">
-                    <i class="fas fa-phone-square"></i>
+                <div class="premium-contact-card shadow-sm">
+                    <i class="fas fa-phone"></i>
                     <h5 class="fw-bold">TELEFONI</h5>
                     <p class="mb-0 text-muted">+387 30 732 937<br>+387 63 333 505</p>
                 </div>
-                <div class="premium-contact-card">
-                    <i class="fas fa-envelope-open"></i>
+                <div class="premium-contact-card shadow-sm">
+                    <i class="fas fa-envelope"></i>
                     <h5 class="fw-bold">EMAIL</h5>
                     <p class="mb-0 text-muted">branex_doo@hotmail.com</p>
                 </div>
@@ -189,19 +212,19 @@
                     <form>
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <label class="small fw-bold mb-1">IME</label>
-                                <input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Vaše ime...">
+                                <label class="small fw-bold mb-1">IME I PREZIME</label>
+                                <input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Unesite ime...">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="small fw-bold mb-1">EMAIL</label>
-                                <input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Vaš email...">
+                                <input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Unesite email...">
                             </div>
                         </div>
                         <div class="mb-4">
                             <label class="small fw-bold mb-1">DETALJI UPITA</label>
                             <textarea class="form-control border-dark rounded-0 p-3" rows="5" placeholder="Vrsta robe, destinacija, težina..."></textarea>
                         </div>
-                        <button type="button" class="btn-main">POŠALJI ZAHTJEV ZA PONUDU</button>
+                        <button type="button" class="btn-main">POŠALJI UPIT</button>
                     </form>
                 </div>
             </div>
@@ -211,7 +234,7 @@
 
 <footer class="footer text-center">
     <div class="container">
-        <p class="mb-0">© 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS SOLUTIONS</p>
+        <p class="mb-0">&copy; 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS</p>
     </div>
 </footer>
 
