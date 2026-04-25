@@ -3,121 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branex Busovača | Transport & Logistika</title>
+    <title>Branex Busovača | Premium Logistika</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --main-color: #FFD700; --dark-color: #1a1a1a; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
-        .navbar { background: var(--dark-color); border-bottom: 3px solid var(--main-color); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
-                height: 80vh; background-size: cover; background-position: center; display: flex; align-items: center; color: white; }
-        .btn-primary { background: var(--main-color); border: none; color: black; font-weight: bold; padding: 12px 30px; }
-        .btn-primary:hover { background: #e6c200; color: black; }
-        .section-title { border-left: 5px solid var(--main-color); padding-left: 15px; margin-bottom: 30px; font-weight: bold; }
-        .service-card { background: white; padding: 30px; border-radius: 10px; transition: 0.3s; height: 100%; border-bottom: 3px solid transparent; }
-        .service-card:hover { transform: translateY(-10px); border-bottom: 3px solid var(--main-color); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .icon-box { font-size: 40px; color: var(--main-color); margin-bottom: 20px; }
-        footer { background: var(--dark-color); color: white; padding: 50px 0; }
+        :root { --main-color: #FFD700; --dark-color: #121212; --gray-light: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #333; line-height: 1.6; }
+        
+        /* Navigacija sa okvirom za logo */
+        .navbar { background: var(--dark-color); padding: 15px 0; border-bottom: 4px solid var(--main-color); }
+        .navbar-brand { 
+            border: 2px solid var(--main-color); 
+            padding: 5px 20px; 
+            font-weight: 900; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+        
+        /* Hero sekcija sa više prostora */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=2000'); 
+            height: 85vh; background-size: cover; background-position: center; 
+            display: flex; align-items: center; color: white;
+        }
+        .hero-content { max-width: 800px; border-left: 8px solid var(--main-color); padding-left: 30px; }
+
+        /* Sekcije sa jasnim razmakom */
+        section { padding: 100px 0; }
+        .section-title { font-weight: 800; text-transform: uppercase; margin-bottom: 50px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; width: 50%; height: 4px; background: var(--main-color); bottom: -10px; left: 0; }
+
+        /* Kartice usluga sa okvirom */
+        .service-card { 
+            background: white; padding: 40px; border: 1px solid #eee; 
+            border-radius: 0; transition: all 0.4s ease; height: 100%;
+        }
+        .service-card:hover { border-color: var(--main-color); box-shadow: 0 15px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .icon-box { font-size: 45px; color: var(--dark-color); margin-bottom: 25px; }
+
+        /* KONTAKT SEKCIJA - Modernizovana */
+        .contact-box { background: var(--gray-light); padding: 40px; border: 1px solid #ddd; height: 100%; }
+        .contact-item { display: flex; align-items: center; margin-bottom: 25px; }
+        .contact-item i { 
+            width: 50px; height: 50px; background: var(--dark-color); color: var(--main-color); 
+            display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 20px; font-size: 20px;
+        }
+        
+        /* Formular sa stilom */
+        .form-control { 
+            border-radius: 0; border: 1px solid #ccc; padding: 12px; margin-bottom: 20px;
+        }
+        .form-control:focus { border-color: var(--main-color); box-shadow: none; }
+        .btn-send { 
+            background: var(--dark-color); color: white; border: none; padding: 15px 40px; 
+            font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+        }
+        .btn-send:hover { background: var(--main-color); color: black; }
+
+        footer { background: var(--dark-color); color: #888; padding: 40px 0; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">BRANEX <span style="color:var(--main-color)">BUSOVAČA</span></a>
+        <a class="navbar-brand" href="#"><span style="color:white">BRANEX</span> <span style="color:var(--main-color)">BUSOVAČA</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#onama">O nama</a></li>
-                <li class="nav-item"><a class="nav-link" href="#usluge">Usluge</a></li>
-                <li class="nav-item"><a class="nav-link" href="#vozni-park">Vozni park</a></li>
-                <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#onama">O NAMA</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#usluge">USLUGE</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#kontakt">KONTAKT</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section class="hero text-center">
+<section class="hero">
     <div class="container">
-        <h1 class="display-3 fw-bold mb-3">VAŠ OSLONAC NA <span style="color:var(--main-color)">EVROPSKIM</span> PUTEVIMA</h1>
-        <p class="lead mb-4">Profesionalni transport, špedicija i logistika iz srca Bosne i Hercegovine.</p>
-        <a href="#kontakt" class="btn btn-primary btn-lg">ZATRAŽITE PONUDU</a>
-    </div>
-</section>
-
-<section id="onama" class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2 class="section-title">O NAMA</h2>
-                <p>Branex d.o.o. Busovača je sinonim za vrhunsku logistiku. Sa bazom u Busovači, razvili smo mrežu koja povezuje BiH sa najvažnijim ekonomskim centrima Evrope. Naša misija je jednostavna: siguran, brz i pouzdan transport vaše robe.</p>
-                <p>Sa dugogodišnjim iskustvom i modernom flotom, garantujemo vrhunsku uslugu po svjetskim standardima.</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Logistika">
-            </div>
+        <div class="hero-content">
+            <h1 class="display-2 fw-bold mb-3">GLOBALNA LOGISTIKA <br><span style="color:var(--main-color)">BEZ GRANICA</span></h1>
+            <p class="lead mb-4 fs-4">Vaš pouzdan partner u transportu i špediciji. Povezujemo Busovaču sa cijelim svijetom uz maksimalnu sigurnost.</p>
+            <a href="#kontakt" class="btn-send text-decoration-none">Započnimo saradnju</a>
         </div>
     </div>
 </section>
 
-<section id="usluge" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title text-center">NAŠE USLUGE</h2>
-        <div class="row g-4">
+<section id="usluge">
+    <div class="container text-center">
+        <h2 class="section-title">Naše Usluge</h2>
+        <div class="row g-4 mt-2">
             <div class="col-md-4">
-                <div class="service-card text-center">
-                    <div class="icon-box"><i class="fas fa-truck"></i></div>
-                    <h4>Cestovni transport</h4>
-                    <p>Međunarodni i domaći prevoz robe sa fokusom na sigurnost i tačnost isporuke.</p>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-shipping-fast"></i></div>
+                    <h4 class="fw-bold">EKSPRESNI TRANSPORT</h4>
+                    <p class="text-muted">Brza i efikasna isporuka pošiljki širom Evrope uz striktno poštovanje rokova.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="service-card text-center">
-                    <div class="icon-box"><i class="fas fa-file-invoice"></i></div>
-                    <h4>Špedicija</h4>
-                    <p>Kompletno carinsko posredovanje i priprema dokumentacije za brzi prelazak granica.</p>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-boxes"></i></div>
+                    <h4 class="fw-bold">ZBIRNI PREVOZ</h4>
+                    <p class="text-muted">Optimizacija troškova kroz pametno grupisanje robe. Idealno za manje pošiljke.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="service-card text-center">
-                    <div class="icon-box"><i class="fas fa-warehouse"></i></div>
-                    <h4>Logistika</h4>
-                    <p>Pametna rješenja za skladištenje i distribuciju robe širom regije.</p>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="fw-bold">SIGURNO SKLADIŠTENJE</h4>
+                    <p class="text-muted">Moderna rješenja za čuvanje vaše robe u kontrolisanim i sigurnim uslovima.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="kontakt" class="py-5">
+<section id="kontakt" class="bg-white">
     <div class="container">
-        <h2 class="section-title">KONTAKTIRAJTE NAS</h2>
         <div class="row">
-            <div class="col-md-6">
-                <div class="mb-4">
-                    <h5><i class="fas fa-map-marker-alt text-warning"></i> Adresa:</h5>
-                    <p>Ul. 1. mart/ožujak bb, 72260 Busovača, BiH</p>
-                </div>
-                <div class="mb-4">
-                    <h5><i class="fas fa-phone text-warning"></i> Telefoni:</h5>
-                    <p>+387 30 732 937<br>063 333 505 | 063 992 959</p>
-                </div>
-                <div class="mb-4">
-                    <h5><i class="fas fa-envelope text-warning"></i> Email:</h5>
-                    <p>branex_doo@hotmail.com</p>
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <h2 class="section-title">Kontakt Informacije</h2>
+                <div class="contact-box shadow-sm">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold">ADRESA</h6>
+                            <span>Ul. 1. mart bb, Busovača, BiH</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold">TELEFON</h6>
+                            <span>+387 30 732 937 | 063 333 505</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold">EMAIL</h6>
+                            <span>branex_doo@hotmail.com</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="p-4 bg-white rounded shadow">
-                    <h4>Brzi upit</h4>
+            <div class="col-lg-7">
+                <h2 class="section-title">Pošaljite Upit</h2>
+                <div class="p-4 border">
                     <form>
-                        <input type="text" class="form-control mb-3" placeholder="Vaše ime">
-                        <input type="email" class="form-control mb-3" placeholder="Vaš Email">
-                        <textarea class="form-control mb-3" rows="4" placeholder="Opis pošiljke (težina, relacija...)"></textarea>
-                        <button type="button" class="btn btn-primary w-100">POŠALJI UPIT</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="small fw-bold">IME I PREZIME</label>
+                                <input type="text" class="form-control" placeholder="npr. Marko Marković">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small fw-bold">VAŠ EMAIL</label>
+                                <input type="email" class="form-control" placeholder="ime@kompanija.com">
+                            </div>
+                        </div>
+                        <label class="small fw-bold">DETALJI POŠILJKE</label>
+                        <textarea class="form-control" rows="5" placeholder="Težina, destinacija, vrsta robe..."></textarea>
+                        <button type="button" class="btn-send w-100">POŠALJI PORUKU</button>
                     </form>
                 </div>
             </div>
@@ -127,11 +175,10 @@
 
 <footer>
     <div class="container text-center">
-        <p>&copy; 2026 Branex d.o.o. Busovača. Sva prava zadržana.</p>
-        <p>Powered by Modern Logistics Systems</p>
+        <p class="mb-0">&copy; 2026 BRANEX BUSOVAČA. SVA PRAVA ZADRŽANA.</p>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bundle.min.js"></script>
 </body>
 </html>
