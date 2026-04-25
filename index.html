@@ -29,27 +29,30 @@
         }
         .nav-link-custom:hover { color: var(--main-color) !important; }
 
-        /* Hero - SADA ČIST I MASIVAN */
+        /* Hero - Čist i upečatljiv */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000'); 
-            height: 80vh; background-size: cover; background-position: center; 
+            height: 70vh; background-size: cover; background-position: center; 
             display: flex; align-items: center; color: white;
         }
-        .hero h1 { font-size: 4.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
+        .hero h1 { font-size: 4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* Sekcije */
+        /* Sekcije i animacije (Folder prelaz) */
         section { padding: 100px 0; }
         .section-animate {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
         }
         .section-animate.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Kontakt Kartice */
+        /* O NAMA - Profesionalni stil */
+        .img-frame { border: 15px solid var(--dark-color); padding: 0; line-height: 0; }
+
+        /* KONTAKT KARTICE I FORMULAR */
         .premium-contact-card {
             border: 2px solid #ddd;
             padding: 30px;
@@ -58,13 +61,9 @@
             background: #fff;
             border-left: 5px solid var(--dark-color);
         }
-        .premium-contact-card:hover {
-            border-color: var(--main-color);
-            transform: translateX(10px);
-        }
+        .premium-contact-card:hover { border-color: var(--main-color); transform: translateX(10px); }
         .premium-contact-card i { font-size: 2rem; color: var(--main-color); margin-bottom: 15px; display: block; }
 
-        /* Formular s okvirom */
         .framed-form-container {
             border: 4px solid var(--dark-color);
             padding: 40px;
@@ -72,7 +71,7 @@
             position: relative;
         }
         .framed-form-container::after {
-            content: "UPIT ZA PONUDU";
+            content: "ZATRAŽITE PONUDU";
             position: absolute;
             top: -15px;
             left: 20px;
@@ -85,12 +84,12 @@
 
         .btn-main {
             background: var(--dark-color); color: white; border: none;
-            padding: 15px 40px; font-weight: bold; text-transform: uppercase;
-            transition: 0.3s; width: 100%;
+            padding: 18px 40px; font-weight: bold; text-transform: uppercase;
+            transition: 0.3s; width: 100%; letter-spacing: 1px;
         }
         .btn-main:hover { background: var(--main-color); color: black; }
 
-        .footer { background: #000; color: #555; padding: 30px 0; border-top: 5px solid var(--main-color); }
+        .footer { background: #000; color: #555; padding: 40px 0; border-top: 5px solid var(--main-color); }
     </style>
 </head>
 <body>
@@ -102,9 +101,9 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#onama">O NAMA</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#usluge">USLUGE</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom" href="#kontakt">KONTAKT</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom mx-2" href="#onama">O NAMA</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom mx-2" href="#usluge">USLUGE</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom mx-2" href="#kontakt">KONTAKT</a></li>
             </ul>
         </div>
     </div>
@@ -112,8 +111,8 @@
 
 <section class="hero text-center">
     <div class="container">
-        <h1 class="mb-4">PROFESIONALNA <br><span style="color:var(--main-color)">LOGISTIKA</span></h1>
-        <p class="lead mb-0 fs-4 fw-light">Vaš siguran partner u međunarodnom transportu.</p>
+        <h1 class="mb-4">VRHUNSKA <span style="color:var(--main-color)">LOGISTIKA</span></h1>
+        <p class="lead mb-0 fs-3 fw-light">Vaša roba, naša odgovornost. Širom Evrope.</p>
     </div>
 </section>
 
@@ -122,31 +121,64 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h2 class="display-4 fw-bold mb-4">MI SMO <span style="color:var(--main-color)">BRANEX</span></h2>
-                <p class="fs-5 text-muted">Lideri u transportu roba na relaciji BiH – Evropska Unija. Naš fokus je na sigurnosti i brzini u svakom pređenom kilometru.</p>
+                <p class="fs-5 text-muted">
+                    Branex d.o.o. Busovača nije samo transportna firma; mi smo arhitekti vaše logistike. Sa decenijskim iskustvom u povezivanju domaćeg tržišta sa ključnim centrima Evropske unije, izgradili smo reputaciju zasnovanu na besprijekornoj tačnosti i povjerenju.
+                </p>
+                <p class="fs-5 text-muted">
+                    Naša flota, opremljena najmodernijim vozilima Euro 6 standarda, svakodnevno savladava kilometre širom Njemačke, Austrije, Slovenije i Italije, noseći vaše povjerenje kao najvrijedniji teret. Za nas, svaki klijent je prioritet, a svaki transport misija koju obavljamo uz maksimalnu profesionalnost.
+                </p>
             </div>
             <div class="col-lg-6">
-                <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1000" class="img-fluid border shadow-sm">
+                <div class="img-frame shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1000" class="img-fluid" alt="Branex Transport">
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="kontakt" class="bg-light section-animate">
+<section id="usluge" class="bg-light section-animate">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5">NAŠE USLUGE</h2>
+        <div class="row g-4 text-start">
+            <div class="col-md-4">
+                <div class="p-5 bg-white border-bottom border-4 border-warning shadow-sm">
+                    <h4 class="fw-bold">TRANSPORT</h4>
+                    <p class="text-muted mb-0">Kompletni i zbirni utovari za sve zemlje EU uz maksimalnu sigurnost.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 bg-white border-bottom border-4 border-dark shadow-sm">
+                    <h4 class="fw-bold">CARINJENJE</h4>
+                    <p class="text-muted mb-0">Posredovanje i špedicija. Brzo rješavanje svih carinskih procedura.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 bg-white border-bottom border-4 border-warning shadow-sm">
+                    <h4 class="fw-bold">LOGISTIKA</h4>
+                    <p class="text-muted mb-0">Pametna rješenja za skladištenje i distribuciju vaše robe do krajnjih vrata.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt" class="section-animate">
     <div class="container">
         <h2 class="text-center mb-5 fw-bold display-5">KLIJENT CENTAR</h2>
         <div class="row g-4">
             <div class="col-lg-4">
-                <div class="premium-contact-card shadow-sm">
+                <div class="premium-contact-card">
                     <i class="fas fa-map-marked-alt"></i>
-                    <h5 class="fw-bold">LOKACIJA</h5>
+                    <h5 class="fw-bold">ADRESA</h5>
                     <p class="mb-0 text-muted">Ul. 1. mart bb, Busovača, BiH</p>
                 </div>
-                <div class="premium-contact-card shadow-sm">
+                <div class="premium-contact-card">
                     <i class="fas fa-phone-square"></i>
-                    <h5 class="fw-bold">TELEFON</h5>
-                    <p class="mb-0 text-muted">+387 30 732 937</p>
+                    <h5 class="fw-bold">TELEFONI</h5>
+                    <p class="mb-0 text-muted">+387 30 732 937<br>+387 63 333 505</p>
                 </div>
-                <div class="premium-contact-card shadow-sm">
+                <div class="premium-contact-card">
                     <i class="fas fa-envelope-open"></i>
                     <h5 class="fw-bold">EMAIL</h5>
                     <p class="mb-0 text-muted">branex_doo@hotmail.com</p>
@@ -156,11 +188,20 @@
                 <div class="framed-form-container shadow-lg">
                     <form>
                         <div class="row">
-                            <div class="col-md-6 mb-4"><input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Ime"></div>
-                            <div class="col-md-6 mb-4"><input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Email"></div>
+                            <div class="col-md-6 mb-4">
+                                <label class="small fw-bold mb-1">IME</label>
+                                <input type="text" class="form-control border-dark rounded-0 p-3" placeholder="Vaše ime...">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="small fw-bold mb-1">EMAIL</label>
+                                <input type="email" class="form-control border-dark rounded-0 p-3" placeholder="Vaš email...">
+                            </div>
                         </div>
-                        <textarea class="form-control border-dark rounded-0 p-3 mb-4" rows="5" placeholder="Detalji transporta..."></textarea>
-                        <button type="button" class="btn-main">POŠALJI ZAHTJEV</button>
+                        <div class="mb-4">
+                            <label class="small fw-bold mb-1">DETALJI UPITA</label>
+                            <textarea class="form-control border-dark rounded-0 p-3" rows="5" placeholder="Vrsta robe, destinacija, težina..."></textarea>
+                        </div>
+                        <button type="button" class="btn-main">POŠALJI ZAHTJEV ZA PONUDU</button>
                     </form>
                 </div>
             </div>
@@ -169,7 +210,9 @@
 </section>
 
 <footer class="footer text-center">
-    <p class="mb-0">&copy; 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS</p>
+    <div class="container">
+        <p class="mb-0">© 2026 BRANEX BUSOVAČA | PREMIUM LOGISTICS SOLUTIONS</p>
+    </div>
 </footer>
 
 <script>
